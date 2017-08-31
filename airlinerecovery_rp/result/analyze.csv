@@ -1,0 +1,31 @@
+large delay:435, (65 215),  f:36, schedule:10730 to 11165, leg:50->67,  [11100,11520 ],  Sun May 07 10:50:00 SGT 2017 -> Sun May 07 13:20:00 SGT 2017
+large delay:455, (140 290),  f:99, schedule:10785 to 11240, leg:67->49,  [10950,11370 ],  Sun May 07 11:45:00 SGT 2017 -> Sun May 07 14:15:00 SGT 2017
+large delay:450, (-10 105),  f:117, schedule:10640 to 11090, leg:62->49,  [10985,11405 ],  Sun May 07 09:20:00 SGT 2017 -> Sun May 07 11:15:00 SGT 2017
+large delay:465, (-160 5),  f:131, schedule:10475 to 10940, leg:72->49,  [10935,11355 ],  Sun May 07 06:35:00 SGT 2017 -> Sun May 07 09:20:00 SGT 2017
+large delay:390, (20 125),  f:185, schedule:10730 to 11120, leg:57->49,  [10995,11415 ],  Sun May 07 10:50:00 SGT 2017 -> Sun May 07 12:35:00 SGT 2017
+large delay:405, (-100 25),  f:212, schedule:10595 to 11000, leg:37->49,  [10975,11395 ],  Sun May 07 08:35:00 SGT 2017 -> Sun May 07 10:40:00 SGT 2017
+large delay:445, (330 415),  f:274, schedule:10985 to 11430, leg:62->50,  [11015,11435 ],  Sun May 07 15:05:00 SGT 2017 -> Sun May 07 16:30:00 SGT 2017
+large delay:465, (185 265),  f:287, schedule:10820 to 11285, leg:14->49,  [11020,11440 ],  Sun May 07 12:20:00 SGT 2017 -> Sun May 07 13:40:00 SGT 2017
+large delay:480, (50 135),  f:295, schedule:10670 to 11150, leg:61->14,  [11100,11520 ],  Sun May 07 09:50:00 SGT 2017 -> Sun May 07 11:15:00 SGT 2017
+large delay:470, (185 270),  f:300, schedule:10815 to 11285, leg:14->61,  [11015,11435 ],  Sun May 07 12:15:00 SGT 2017 -> Sun May 07 13:40:00 SGT 2017
+large delay:475, (55 135),  f:327, schedule:10680 to 11155, leg:49->14,  [11100,11520 ],  Sun May 07 10:00:00 SGT 2017 -> Sun May 07 11:20:00 SGT 2017
+large delay:415, (-5 45),  f:545, schedule:10680 to 11095, leg:63->49,  [11050,11470 ],  Sun May 07 10:00:00 SGT 2017 -> Sun May 07 10:50:00 SGT 2017
+large delay:415, (600 790),  f:752, schedule:11285 to 11700, leg:25->49,  [11700,11760 11285,11530 ],  Sun May 07 20:05:00 SGT 2017 -> Sun May 07 23:15:00 SGT 2017
+large delay:460, (155 245),  f:1045, schedule:10795 to 11255, leg:49->31,  [11100,11520 ],  Sun May 07 11:55:00 SGT 2017 -> Sun May 07 13:25:00 SGT 2017
+large delay:385, (235 320),  f:1063, schedule:10950 to 11335, leg:31->49,  [11015,11435 ],  Sun May 07 14:30:00 SGT 2017 -> Sun May 07 15:55:00 SGT 2017
+large delay:430, (25 125),  f:1215, schedule:10695 to 11125, leg:33->49,  [11000,11420 ],  Sun May 07 10:15:00 SGT 2017 -> Sun May 07 11:55:00 SGT 2017
+large delay:655, (195 285),  f:1256, schedule:10640 to 11295, leg:66->49,  [11010,11430 ],  Sun May 07 09:20:00 SGT 2017 -> Sun May 07 10:50:00 SGT 2017
+large delay:525, (55 150),  f:1260, schedule:10630 to 11155, leg:61->7,  [11100,11520 ],  Sun May 07 09:10:00 SGT 2017 -> Sun May 07 10:45:00 SGT 2017
+large delay:530, (230 380),  f:1397, schedule:10800 to 11330, leg:7->32,  [10800,10800 11100,11460 ],  Sun May 07 12:00:00 SGT 2017 -> Sun May 07 14:30:00 SGT 2017
+large delay:555, (60 160),  f:1416, schedule:10605 to 11160, leg:49->7,  [11100,11520 ],  Sun May 07 08:45:00 SGT 2017 -> Sun May 07 10:25:00 SGT 2017
+large delay:595, (260 345),  f:1423, schedule:10765 to 11360, leg:7->49,  [11015,11435 ],  Sun May 07 11:25:00 SGT 2017 -> Sun May 07 12:50:00 SGT 2017
+large delay:575, (95 180),  f:1426, schedule:10620 to 11195, leg:50->7,  [11100,11520 ],  Sun May 07 09:00:00 SGT 2017 -> Sun May 07 10:25:00 SGT 2017
+large delay:535, (200 305),  f:1433, schedule:10765 to 11300, leg:7->50,  [10995,11415 ],  Sun May 07 11:25:00 SGT 2017 -> Sun May 07 13:10:00 SGT 2017
+large delay:535, (610 790),  f:1465, schedule:11175 to 11710, leg:13->49,  [11710,11770 11175,11530 ],  Sun May 07 18:15:00 SGT 2017 -> Sun May 07 21:15:00 SGT 2017
+large delay:435, (695 790),  f:1556, schedule:11360 to 11795, leg:58->49,  [11795,11855 11360,11530 ],  Sun May 07 21:20:00 SGT 2017 -> Sun May 07 22:55:00 SGT 2017
+large delay:650, (60 145),  f:1595, schedule:10510 to 11160, leg:61->66,  [11100,11520 ],  Sun May 07 07:10:00 SGT 2017 -> Sun May 07 08:35:00 SGT 2017
+large delay:370, (-85 10),  f:1607, schedule:10645 to 11015, leg:66->61,  [11005,11425 ],  Sun May 07 09:25:00 SGT 2017 -> Sun May 07 11:00:00 SGT 2017
+large delay:435, (325 475),  f:1651, schedule:10990 to 11425, leg:49->67,  [11100,11520 ],  Sun May 07 15:10:00 SGT 2017 -> Sun May 07 17:40:00 SGT 2017
+large delay:470, (-165 10),  f:2069, schedule:10465 to 10935, leg:25->61,  [10925,11345 ],  Sun May 07 06:25:00 SGT 2017 -> Sun May 07 09:20:00 SGT 2017
+large delay:495, (-135 10),  f:2344, schedule:10470 to 10965, leg:11->49,  [10955,11375 ],  Sun May 07 06:30:00 SGT 2017 -> Sun May 07 08:55:00 SGT 2017
+large delay:415, (-115 5),  f:2364, schedule:10570 to 10985, leg:37->50,  [10980,11400 ],  Sun May 07 08:10:00 SGT 2017 -> Sun May 07 10:10:00 SGT 2017

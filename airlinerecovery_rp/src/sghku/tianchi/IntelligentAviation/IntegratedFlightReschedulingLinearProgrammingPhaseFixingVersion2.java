@@ -60,6 +60,48 @@ public class IntegratedFlightReschedulingLinearProgrammingPhaseFixingVersion2 {
 		FlightDelayLimitGenerator flightDelayLimitGenerator = new FlightDelayLimitGenerator();
 		flightDelayLimitGenerator.setFlightDelayLimit(scenario);
 		
+		/*try {
+			Scanner sn = new Scanner(new File("delayfiles/linearsolution_30_489295.42_967_largecancelcost.csv"));
+			sn.nextLine();
+			while(sn.hasNextLine()){
+				String nextLine = sn.nextLine().trim();
+				if(nextLine.equals("")){
+					break;
+				}
+				//System.out.println(nextLine);
+				Scanner innerSn = new Scanner(nextLine);
+				innerSn.useDelimiter(",");
+				int fId = innerSn.nextInt();
+				Flight f = scenario.flightList.get(fId-1);
+				innerSn.next();
+				innerSn.next();
+				innerSn.next();
+				innerSn.next();
+				innerSn.next();
+				
+				String[] delayStr = innerSn.next().split("_");
+				for(String delay:delayStr){
+					int d = Integer.parseInt(delay);
+					int t = f.initialTakeoffT + d;
+					boolean isInclude = false;
+					for(int[] timeLimit:f.timeLimitList){
+						if(t >=timeLimit[0] && t <= timeLimit[1]){
+							isInclude = true;
+							break;
+						}
+					}
+					
+					if(!isInclude){
+						System.out.println("error:"+f.id+"  "+delay+" "+f.takeoffTime+"->"+f.landingTime+"  "+f.leg.originAirport+"->"+f.leg.destinationAirport+" "+f.isDomestic+" "+f.initialTakeoffT);
+					}
+				}
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.exit(1);*/
+		
 		List<Flight> candidateFlightList = new ArrayList<>();
 		List<ConnectingFlightpair> candidateConnectingFlightList = new ArrayList<>();
 		
