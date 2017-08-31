@@ -541,9 +541,12 @@ public class Scenario {
 	public void readFlightSectionItinerary() {
 		int n = 0;
 		List<Integer> delayOptionList = new ArrayList<>();
-		// 三个不同的延误值
+		// 不同的延误值
 		delayOptionList.add(0);
+		delayOptionList.add(6 * 60);
+		delayOptionList.add(12 * 60);
 		delayOptionList.add(24 * 60);
+		delayOptionList.add(36 * 60);
 		delayOptionList.add(48 * 60);
 
 		for (Itinerary ite : itineraryList) {
@@ -638,10 +641,16 @@ public class Scenario {
 							}
 						}*/
 						
-						if (delay2 <= 24 * 60) {
-							fsi.unitCost = 0.5;
-						} else if (delay2 <= 48 * 60 && delay1 >= 24 * 60) {
-							fsi.unitCost = 2;
+						if (delay2 < 6 * 60) {
+							fsi.unitCost = 0.1;
+						} else if (delay2 < 12 * 60 && delay1 >= 6 * 60) {
+							fsi.unitCost = 0.375;
+						} else if (delay2 < 24 * 60 && delay1 >= 12 * 60) {
+							fsi.unitCost = 0.75;
+						} else if (delay2 < 36 * 60 && delay1 >= 24 * 60) {
+							fsi.unitCost = 1.67;
+						} else if (delay2 < 48 * 60 && delay1 >= 36 * 60) {
+							fsi.unitCost = 2.625;
 						} else {
 							if(delay1 < 48*60){
 								System.out.println("error delay:" + delay1 + " " + delay2);								
