@@ -804,7 +804,7 @@ public class Scenario {
 		// 读取已经固定的飞机路径
 		Scanner sn = null;
 		try {
-			sn = new Scanner(new File("fixschedule"));
+			sn = new Scanner(new File(Parameter.fixFile));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -45,10 +45,11 @@ public class IntegratedFlightReschedulingLinearProgrammingPhaseFixingVersion2 {
 
 		Parameter.isPassengerCostConsidered = true;
 		Parameter.isReadFixedRoutes = true;
-		Parameter.gap = 15;
+		Parameter.gap = 5;
+		Parameter.fixFile = "fixschedule_gap5";
 		
-		Parameter.linearsolutionfilename = "linearsolutionwithpassenger_0830_stage3.csv";
-		runOneIteration(false, 40);
+		Parameter.linearsolutionfilename = "linearsolutionwithpassenger_0831_stage2.csv";
+		runOneIteration(true, 40);
 		/*Parameter.linearsolutionfilename = "linearsolution_0829_stage2.csv";
 		runOneIteration(true, 40);*/
 	}

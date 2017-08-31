@@ -315,7 +315,7 @@ public class AircraftPathReader {
 		System.exit(1);*/
 		
 		try {
-			MyFile.creatTxtFile("fixschedule");
+			MyFile.creatTxtFile(Parameter.fixFile);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

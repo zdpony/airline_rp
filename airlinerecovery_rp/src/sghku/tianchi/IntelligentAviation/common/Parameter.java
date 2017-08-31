@@ -120,4 +120,6 @@ public class Parameter {
 	
 	public static int stageIndex = 1;
 	public static String linearsolutionfilename = "linearsoluion.csv";
+	
+	public static String fixFile = "fixschedule";
 }
