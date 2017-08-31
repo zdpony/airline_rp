@@ -48,8 +48,8 @@ public class IntegratedFlightReschedulingLinearProgrammingPhaseFixingVersion2 {
 		Parameter.gap = 5;
 		Parameter.fixFile = "fixschedule_gap5";
 		
-		Parameter.linearsolutionfilename = "linearsolutionwithpassenger_0831_stage3.csv";
-		runOneIteration(true, 10);
+		Parameter.linearsolutionfilename = "linearsolutionwithpassenger_0831_stage5.csv";
+		runOneIteration(false, 16);
 		/*Parameter.linearsolutionfilename = "linearsolution_0829_stage2.csv";
 		runOneIteration(true, 40);*/
 	}

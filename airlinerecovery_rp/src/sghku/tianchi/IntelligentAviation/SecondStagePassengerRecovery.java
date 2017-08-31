@@ -36,7 +36,8 @@ public class SecondStagePassengerRecovery {
 		Parameter.isReadFixedRoutes = true;
 		Parameter.gap = 5;
 		Parameter.stageIndex = 2;
-
+		Parameter.fixFile = "fixschedule_gap5";
+		
 		Scenario scenario = new Scenario(Parameter.EXCEL_FILENAME);
 
 		runSecondStage(false,scenario);
