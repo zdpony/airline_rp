@@ -2,7 +2,6 @@ package sghku.tianchi.IntelligentAviation;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.time.temporal.IsoFields;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,10 +16,10 @@ import javax.swing.plaf.synth.SynthSpinnerUI;
 
 import checker.ArcChecker;
 import sghku.tianchi.IntelligentAviation.algorithm.FlightDelayLimitGenerator;
+import sghku.tianchi.IntelligentAviation.algorithm.FlightDelayLimitGeneratorFullDelay;
 import sghku.tianchi.IntelligentAviation.algorithm.NetworkConstructor;
 import sghku.tianchi.IntelligentAviation.algorithm.NetworkConstructorBasedOnDelayAndEarlyLimit;
 import sghku.tianchi.IntelligentAviation.clique.Clique;
-import sghku.tianchi.IntelligentAviation.common.MyFile;
 import sghku.tianchi.IntelligentAviation.common.OutputResult;
 import sghku.tianchi.IntelligentAviation.common.OutputResultWithPassenger;
 import sghku.tianchi.IntelligentAviation.common.Parameter;
@@ -42,16 +41,16 @@ import sghku.tianchi.IntelligentAviation.model.CplexModelForPureAircraft;
 import sghku.tianchi.IntelligentAviation.model.IntegratedCplexModel;
 import sghku.tianchi.IntelligentAviation.model.PushForwardCplexModel;
 
-public class IntegratedFlightReschedulingLinearProgrammingPhaseFixingVersion2 {
+public class IntegratedFlightReschedulingLinearProgrammingPhaseFixingVersion3 {
 	public static void main(String[] args) {
 
 		Parameter.isPassengerCostConsidered = true;
 		Parameter.isReadFixedRoutes = true;
-		Parameter.gap = 5;
-		Parameter.fixFile = "fixschedule_gap5_largedelaylimit";
+		Parameter.gap = 30;
+		Parameter.fixFile = "fixschedule_gap30_fulldelay";
 		
-		Parameter.linearsolutionfilename = "linearsolutionwithpassenger_0901_stage5.csv";
-		runOneIteration(false, 23);
+		Parameter.linearsolutionfilename = "linearsolutionwithpassenger_fulldelay_0901_stage1.csv";
+		runOneIteration(true, 70);
 		/*Parameter.linearsolutionfilename = "linearsolution_0829_stage2.csv";
 		runOneIteration(true, 40);*/
 	}
@@ -59,17 +58,11 @@ public class IntegratedFlightReschedulingLinearProgrammingPhaseFixingVersion2 {
 	public static void runOneIteration(boolean isFractional, int fixNumber){
 		Scenario scenario = new Scenario(Parameter.EXCEL_FILENAME);
 				
-		FlightDelayLimitGenerator flightDelayLimitGenerator = new FlightDelayLimitGenerator();
+		FlightDelayLimitGeneratorFullDelay flightDelayLimitGenerator = new FlightDelayLimitGeneratorFullDelay();
 		flightDelayLimitGenerator.setFlightDelayLimit(scenario);
 		
-		try {
-			try {
-				MyFile.creatTxtFile("delayanalysis_gap5_largedelaylimit_stage2.csv");
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			Scanner sn = new Scanner(new File("delayfiles/linearsolutionwithpassenger_0901_stage2_gap5_largedelaylimit_584541.25_70.csv"));
+		/*try {
+			Scanner sn = new Scanner(new File("delayfiles/linearsolution_30_489295.42_967_largecancelcost.csv"));
 			sn.nextLine();
 			while(sn.hasNextLine()){
 				String nextLine = sn.nextLine().trim();
@@ -99,17 +92,8 @@ public class IntegratedFlightReschedulingLinearProgrammingPhaseFixingVersion2 {
 						}
 					}
 					
-					/*if(!isInclude){
+					if(!isInclude){
 						System.out.println("error:"+f.id+"  "+delay+" "+f.takeoffTime+"->"+f.landingTime+"  "+f.leg.originAirport+"->"+f.leg.destinationAirport+" "+f.isDomestic+" "+f.initialTakeoffT);
-					}*/
-					if(d > 360) {
-						//System.out.println("error:"+f.id+"  "+delay+" "+f.takeoffTime+"->"+f.landingTime+"  "+f.leg.originAirport+"->"+f.leg.destinationAirport+" "+f.isDomestic+" "+f.initialTakeoffT);
-						try {
-							MyFile.writeTxtFile(f.id+",  "+delay+", "+f.takeoffTime+"->"+f.landingTime+",  "+f.leg.originAirport+"->"+f.leg.destinationAirport+", "+f.isDomestic+", "+f.initialTakeoffT);
-						} catch (IOException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
 					}
 				}
 			}
@@ -117,7 +101,7 @@ public class IntegratedFlightReschedulingLinearProgrammingPhaseFixingVersion2 {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.exit(1);
+		System.exit(1);*/
 		
 		List<Flight> candidateFlightList = new ArrayList<>();
 		List<ConnectingFlightpair> candidateConnectingFlightList = new ArrayList<>();
