@@ -16,6 +16,7 @@ import javax.swing.plaf.synth.SynthSpinnerUI;
 
 import checker.ArcChecker;
 import sghku.tianchi.IntelligentAviation.algorithm.FlightDelayLimitGenerator;
+import sghku.tianchi.IntelligentAviation.algorithm.FlightDelayLimitGeneratorFullDelay;
 import sghku.tianchi.IntelligentAviation.algorithm.NetworkConstructor;
 import sghku.tianchi.IntelligentAviation.algorithm.NetworkConstructorBasedOnDelayAndEarlyLimit;
 import sghku.tianchi.IntelligentAviation.clique.Clique;
@@ -40,16 +41,16 @@ import sghku.tianchi.IntelligentAviation.model.CplexModelForPureAircraft;
 import sghku.tianchi.IntelligentAviation.model.IntegratedCplexModel;
 import sghku.tianchi.IntelligentAviation.model.PushForwardCplexModel;
 
-public class IntegratedFlightReschedulingLinearProgrammingPhaseFixingVersion2 {
+public class IntegratedFlightReschedulingLinearProgrammingPhaseFixingVersion3 {
 	public static void main(String[] args) {
 
 		Parameter.isPassengerCostConsidered = true;
 		Parameter.isReadFixedRoutes = true;
-		Parameter.gap = 5;
-		Parameter.fixFile = "fixschedule_gap5_largedelaylimit";
+		Parameter.gap = 30;
+		Parameter.fixFile = "fixschedule_gap30_fulldelay";
 		
-		Parameter.linearsolutionfilename = "linearsolutionwithpassenger_0901_stage5.csv";
-		runOneIteration(false, 23);
+		Parameter.linearsolutionfilename = "linearsolutionwithpassenger_fulldelay_0901_stage1.csv";
+		runOneIteration(true, 70);
 		/*Parameter.linearsolutionfilename = "linearsolution_0829_stage2.csv";
 		runOneIteration(true, 40);*/
 	}
@@ -57,7 +58,7 @@ public class IntegratedFlightReschedulingLinearProgrammingPhaseFixingVersion2 {
 	public static void runOneIteration(boolean isFractional, int fixNumber){
 		Scenario scenario = new Scenario(Parameter.EXCEL_FILENAME);
 				
-		FlightDelayLimitGenerator flightDelayLimitGenerator = new FlightDelayLimitGenerator();
+		FlightDelayLimitGeneratorFullDelay flightDelayLimitGenerator = new FlightDelayLimitGeneratorFullDelay();
 		flightDelayLimitGenerator.setFlightDelayLimit(scenario);
 		
 		/*try {
