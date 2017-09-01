@@ -151,6 +151,13 @@ public class CurrentScheduleReader {
 		affAirportSet.add(50);
 		affAirportSet.add(61);
 		
+		for(Flight f:scenario.flightList) {
+			if(f.isIncludedInConnecting && f.brotherFlight.isCancelled && !f.isCancelled) {
+				System.out.println("we find it "+f.id);
+			}
+		}
+		System.exit(1);
+		
 		for(Flight f:scenario.flightList){
 			if(f.initialTakeoffT >= 6*1440 && f.initialTakeoffT <= 7*1440){
 				int delay = f.actualTakeoffT - f.initialTakeoffT;

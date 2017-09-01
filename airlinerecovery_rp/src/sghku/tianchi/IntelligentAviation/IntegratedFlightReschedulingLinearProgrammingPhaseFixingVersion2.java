@@ -2,6 +2,7 @@ package sghku.tianchi.IntelligentAviation;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.time.temporal.IsoFields;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,6 +20,7 @@ import sghku.tianchi.IntelligentAviation.algorithm.FlightDelayLimitGenerator;
 import sghku.tianchi.IntelligentAviation.algorithm.NetworkConstructor;
 import sghku.tianchi.IntelligentAviation.algorithm.NetworkConstructorBasedOnDelayAndEarlyLimit;
 import sghku.tianchi.IntelligentAviation.clique.Clique;
+import sghku.tianchi.IntelligentAviation.common.MyFile;
 import sghku.tianchi.IntelligentAviation.common.OutputResult;
 import sghku.tianchi.IntelligentAviation.common.OutputResultWithPassenger;
 import sghku.tianchi.IntelligentAviation.common.Parameter;
@@ -60,8 +62,14 @@ public class IntegratedFlightReschedulingLinearProgrammingPhaseFixingVersion2 {
 		FlightDelayLimitGenerator flightDelayLimitGenerator = new FlightDelayLimitGenerator();
 		flightDelayLimitGenerator.setFlightDelayLimit(scenario);
 		
-		/*try {
-			Scanner sn = new Scanner(new File("delayfiles/linearsolution_30_489295.42_967_largecancelcost.csv"));
+		try {
+			try {
+				MyFile.creatTxtFile("delayanalysis_gap5_largedelaylimit_stage2.csv");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			Scanner sn = new Scanner(new File("delayfiles/linearsolutionwithpassenger_0901_stage2_gap5_largedelaylimit_584541.25_70.csv"));
 			sn.nextLine();
 			while(sn.hasNextLine()){
 				String nextLine = sn.nextLine().trim();
@@ -91,8 +99,17 @@ public class IntegratedFlightReschedulingLinearProgrammingPhaseFixingVersion2 {
 						}
 					}
 					
-					if(!isInclude){
+					/*if(!isInclude){
 						System.out.println("error:"+f.id+"  "+delay+" "+f.takeoffTime+"->"+f.landingTime+"  "+f.leg.originAirport+"->"+f.leg.destinationAirport+" "+f.isDomestic+" "+f.initialTakeoffT);
+					}*/
+					if(d > 360) {
+						//System.out.println("error:"+f.id+"  "+delay+" "+f.takeoffTime+"->"+f.landingTime+"  "+f.leg.originAirport+"->"+f.leg.destinationAirport+" "+f.isDomestic+" "+f.initialTakeoffT);
+						try {
+							MyFile.writeTxtFile(f.id+",  "+delay+", "+f.takeoffTime+"->"+f.landingTime+",  "+f.leg.originAirport+"->"+f.leg.destinationAirport+", "+f.isDomestic+", "+f.initialTakeoffT);
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 					}
 				}
 			}
@@ -100,7 +117,7 @@ public class IntegratedFlightReschedulingLinearProgrammingPhaseFixingVersion2 {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.exit(1);*/
+		System.exit(1);
 		
 		List<Flight> candidateFlightList = new ArrayList<>();
 		List<ConnectingFlightpair> candidateConnectingFlightList = new ArrayList<>();

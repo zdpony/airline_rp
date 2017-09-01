@@ -24,7 +24,7 @@ public class AnalyzeSchedule {
 		Scenario scenario = new Scenario(Parameter.EXCEL_FILENAME);
 		
 
-		String fileName = "linearsolution_30_489295.42_967_largecancelcost.csv";
+		String fileName = "linearsolutionwithpassenger_0901_stage2_gap5_largedelaylimit_584541.25_70.csv";
 	
 		Scanner sn = null;
 		try {
